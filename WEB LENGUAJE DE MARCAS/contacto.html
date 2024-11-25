@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <title>Contacto</title>
+
+    <style>
+        #contenedor {
+            width: 94%;
+            height: 100%;
+            font-family: arial, sans-serif;
+            margin-left: 3%;
+            margin-right: 3%;
+
+
+            padding-top: 10vh;
+
+        }
+
+        #menu {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            width: 100%;
+            height: 10vh;
+            background-color: rgb(27, 27, 27);
+            padding: 0;
+            margin-top: 0;
+            margin-bottom: 15px;
+            list-style: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000; /* Se asegura de que el menú esté por encima de otros elementos */
+        }
+
+        #menu a {
+            text-decoration: none;
+            color: white;
+        }
+
+        #menu li {
+            width: auto;
+            margin: 10px;
+            padding: 7px 20px;
+            font-size: 2vw;
+            font-weight: bold;
+            text-align: center;
+            border: 3px solid white;
+            border-radius: 10px;
+            transition: background-color 1s, transform 1s;
+        }
+
+        #menu li:hover {
+            background-color: rgb(61, 60, 60);
+            cursor: pointer;
+            transform: scale(1.1);
+        }
+
+        #RUTAS {
+            width: 100%;
+            height: 10vh;
+            background-color: rgb(27, 27, 27);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 2vh;
+
+        }
+
+        #RUTAS>h2 {
+            font-size: 4vw;
+            color: rgb(255, 255, 255);
+            text-align: center;
+            margin-top: 10px;
+
+        }
+
+        #elemento2 {
+            display: flex;
+            justify-content: space-between; /* Divide el espacio entre mapa y texto */
+            align-items: flex-start; /* Alinea los elementos en la parte superior */
+            margin-top: 30px;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            background-image: url('asfalto.jpg');
+            background-size: 50% 100%;/* Ocupa la mitad izquierda */
+            background-position: left center;
+            background-repeat: no-repeat;
+    
+        }
+
+        .texto {
+            width: 50%;
+            height: 10vh;
+            padding: 8vh;
+            text-align: center;
+            font-size: 4vw;
+
+
+
+        }
+
+        h3 {
+            font-size: 2vw;
+            color: white;
+            border-radius: 10px;
+            border: 2px solid #fff;
+            margin-bottom: 25px;
+            margin-top: 1px;
+            padding: 1px;
+
+        }
+
+        iframe {
+            width: 50%;
+            height: 450px;
+            border: 2px;
+            border-radius: 10px;
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <div id="contenedor">
+        <ul id="menu">
+            <a href="index.html">
+                <li>INICIO</li>
+            </a>
+            <a href="contenido.html">
+                <li>CONTENIDO </li>
+            </a>
+            <a href="contacto.html">
+                <li>CONTACTO</li>
+            </a>
+        </ul>
+        <div id="RUTAS">
+            <H2>MEJORES RUTAS POR MADRID</H2>
+
+
+        </div>
+        <div id="elemento2">
+
+            <div class="texto">
+                <h3>PUERTO DE LA CRUZ VERDE</h3>
+                <h3>28297, Madrid</h3>
+                <h3>40°33′33″N 4°11′49″O﻿ / ﻿40.559045, -4.19682</h3>
+                <h3>DISTANCIA: 205,37KM</h3>
+
+            </div>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12124.83693565615!2d-4.207522740566016!3d40.55905649493003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd41082a03c1d66f%3A0xf03353c27382e73f!2sPuerto%20de%20la%20Cruz%20Verde!5e0!3m2!1ses!2ses!4v1732371353423!5m2!1ses!2ses"
+                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div id="elemento2">
+
+            <div class="texto">
+                <h3>SIERRA DE GUADARRAMA</h3>
+                <h3>28741, Madrid</h3>
+                <h3>40°48′46″N 3°56′58″O﻿ / ﻿40.81277778, -3.94944444</h3>
+                <h3>DISTANCIA: 402,20KM</h3>
+
+            </div>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.8885884840643!2d-4.0562919239727995!3d40.74247697138911!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd4169008eeba5c3%3A0x8c4271d57cb751d4!2sSierra%20de%20Guadarrama!5e0!3m2!1ses!2ses!4v1732372689734!5m2!1ses!2ses"
+                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div id="RUTAS">
+            <H2>FORMULARIO DE CONTACTO</H2>
+
+
+        </div>
+        <div class="mb-3" style="margin-top: 25px; ">
+            <label for="exampleFormControlInput1" class="form-label">Nombre Usuario</label>
+            <input type="email" class="form-control" id="exampleFormControlInput1">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Asunto</label>
+            <input type="email" class="form-control" id="exampleFormControlInput1">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Email </label>
+            <input type="email" class="form-control" id="exampleFormControlInput1">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Mensaje</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        </div>
+        <button style="float: right;" type="submit" class="btn btn-primary">Enviar</button> <button
+            style="float: right; margin-right: 5px; margin-bottom: 10px;" type="submit"
+            class="btn btn-primary">Borrar</button>
+
+
+
+    </div>
+
+</body>
+
+</html>

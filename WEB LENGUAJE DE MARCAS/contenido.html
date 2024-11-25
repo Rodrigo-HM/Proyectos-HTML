@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contenido</title>
+    <style>
+        #contenedor {
+            width: 90%;
+            height: 100%;
+            font-family: arial, sans-serif;
+            margin-left: 3%;
+            margin-right: 3%;
+
+
+            padding-top: 10vh;
+
+        }
+
+        #menu {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            width: 100%;
+            height: 10vh;
+            background-color: rgb(27, 27, 27);
+            padding: 0;
+            margin-top: 0;
+            margin-bottom: 15px;
+            list-style: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000; /* Se asegura de que el menú esté por encima de otros elementos */
+        }
+
+        #menu a {
+            text-decoration: none;
+            color: white;
+        }
+
+        #menu li {
+            width: auto;
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 2vw;
+            font-weight: bold;
+            text-align: center;
+            border: 3px solid white;
+            border-radius: 10px;
+            transition: background-color 1s, transform 1s;
+        }
+
+        #menu li:hover {
+            background-color: rgb(61, 60, 60);
+            cursor: pointer;
+            transform: scale(1.1);
+        }
+
+        section {
+            width: 100%;
+
+
+
+        }
+
+        article {
+            width: 100%;
+            height: auto;
+            background-color: #b9b7b7;
+            float: left;
+            align-items: center;
+            margin: 15px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            background-image: url('fondo.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            padding: 20px;
+
+        }
+
+        img {
+
+            max-width: 50%;
+        }
+
+        article>div {
+            padding: 15px;
+            text-align: justify;
+            text-align: center;
+            text-indent: 10px;
+            border: 3px solid rgb(61, 61, 61);
+            background-color: rgb(141, 141, 141);
+            border-radius: 10px;
+            margin-top: 10px;
+        }
+
+        article>div>p {
+            margin: 0;
+
+        }
+        article>img:hover{
+            transition: 2s;
+            transform: scale(1.2);
+        }
+    </style>
+
+
+
+</head>
+
+<body>
+    <div id="contenedor">
+
+        <ul id="menu">
+            <a href="index.html">
+                <li>INICIO</li>
+            </a>
+            <a href="contenido.html">
+                <li>CONTENIDO </li>
+            </a>
+            <a href="contacto.html">
+                <li>CONTACTO</li>
+            </a>
+        </ul>
+        <section>
+            <article>
+                <img src="gsxsinfondo.png">
+                <div>
+                    <p>Efectivamente, la madre de las Superbikes, la legendaria GSX-R750 de 1986 no podía faltar en
+                        nuestra lista, un auténtico icono de la era del motociclismo, que dio paso a una de las sagas
+                        más míticas: la saga gixxer.
+
+                        Pionera en muchos ámbitos y aspectos, la Suzuki GSX-R750 ofrecía unos datos y unas cifras muy
+                        lejos de sus rivales: con un motor de cuatro cilindros de 750 cc, refrigerado por aire y
+                        alimentado por cuatro carburadores de compuerta plana ofrecían 106 cv para un peso total de 175
+                        kg, gracias a un chasis de aluminio de doble viga. Sin duda alguna, era toda una superbike
+                        adelantada a su época.</p>
+                </div>
+            </article>
+            <article style="background-image:url('caminotierra.jpg');">
+                <img src="africa.png">
+                <div>
+                    <p>Si hablábamos de la madre de las Superbikes, ahora hablamos de la madre de las trail. La Honda
+                        Africa Twin marcó un antes y un después, siendo una de las motos más usadas en rallys como el
+                        Paris-Dakar, que le hizo ganar una popularidad totalmente justificada. Se trata de la trail por
+                        excelencia, moto todoterreno, grande, alta, pero manejable, dócil, fácil, polivalente, accesible
+                        y fiable. Sucedía a la original XRV650, igual de mítica o más, pero no tan icónica. La Honda
+                        XRV750, qué así se llamaba oficialmente, ofrecía un peso de 209 kg (205 kg a partir del "92), un
+                        tanque de gasolina de 24 litros, suspensiones de largo recorrido, llanta delantera de 21" y un
+                        motor bicilíndrico de 750 cc y una potencia de 60 cv.</p>
+                </div>
+            </article>
+        </section>
+
+
+
+
+    </div>
+
+
+
+
+
+
+
+</body>
+
+</html>

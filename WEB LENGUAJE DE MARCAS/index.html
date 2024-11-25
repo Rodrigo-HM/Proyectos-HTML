@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INICIO</title>
+    <style>                                                                 /* Todos los comentarios son cosas que no sabía y he tenido que bucar */
+        #contenedor {
+            width: 95%;
+            margin: auto;
+            font-family: arial, sans-serif;
+            padding: 10px;
+
+        }
+
+        #cabecero {
+            width: 100%;
+            height: 40vh;
+            background-image: url('1.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+        }
+
+        #titulo {
+
+            position: absolute;
+            top: 28%;
+            left: 34%;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 2vh 4vw;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 6vw;
+            text-align: center;
+
+        }
+
+        #menu {
+            display: flex;
+            justify-content: flex-end; /* Distribuye los elementos a la derecha */
+            align-items: center;
+            width: 100%;
+            height: 10vh;
+            background-color: rgb(27, 27, 27);
+            padding: 0;
+            margin-top: 15px;
+            margin-bottom: 15px;
+            list-style: none;
+            position: sticky;  /* Pegajoso*/
+            top: 1px;
+            z-index: 100; /* Asegura que esté por encima del contenido */
+        }
+
+        #menu a {
+            text-decoration: none;
+            color: white;
+        }
+
+        #menu li {
+
+
+            width: auto;
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 2vw;
+            font-weight: bold;
+            text-align: center;
+            border: 3px solid white;
+            border-radius: 10px;
+            transition: background-color 1s, transform 1s;
+        }
+
+        #menu li:hover {
+            background-color: rgb(61, 60, 60);
+            cursor: pointer;
+            transform: scale(1.1);/* Aumenta ligeramente el tamaño al pasar el ratón */
+        }
+
+        section {
+            display: flex;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            scrollbar-color: transparent transparent;
+            white-space: nowrap; 
+            padding: 5px;
+        }
+
+        article {
+            flex: 0 0 auto;/* Evita que los artículos cambien de tamaño */
+            width: 40vw;
+            height: 60vh;
+            background-color: rgb(27, 27, 27);
+            margin-right: 2vw;
+            padding: 5px;
+            border-radius: 10px;
+        }
+
+        article>img {
+            width: 100%;
+            height: 80%;
+            object-fit: cover;/* Hace que las imágenes se ajusten al contenedor sin deformarse */
+            border-radius: 10px 10px 0 0;
+        }
+
+        article p {
+            text-align: center;
+            font-size: 3vw;
+            color: #ffffff;
+            font-weight: bold;
+            margin-top: 12px;
+        }
+
+        #destacados {
+            width: 100%;
+            height: 10vh;
+            background-color: rgb(27, 27, 27);
+            display: flex;
+            justify-content: center; /* Centra horizontalmente */
+            align-items: center;
+            margin-top: 2vh;
+        }
+
+        #destacados>h2 {
+            font-size: 4vw;
+            color: rgb(255, 255, 255);
+            margin-left: 45vw;
+        }
+
+        #destacados h2:hover {
+            transform: translateX(10vw);/* Mueve el texto 10% del ancho de la ventana a la derecha */
+            transition: 2s;
+        }
+
+        #contenedor2 {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            border: 1px solid #202020;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .elemento2 {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            width: 650px;
+            height: 300px;
+            margin: 10px;
+            background-color: #b9b7b7;
+            border: 5px solid #000000;
+            text-align: center;
+            padding: 10PX;
+            border-radius: 10px;
+        }
+
+        .elemento2 img {
+            padding: 15px;
+            width: 45%;
+            height: 90%;
+        }
+
+        .elemento2 .texto {
+            width: 50%;
+            padding-left: 15px;
+            font-size: 18px;
+            color: #202020;
+            line-height: 1.5;
+        }
+    </style>
+
+
+
+
+
+</head>
+
+<body>
+    <div id="contenedor">
+        <div id="cabecero">
+            <div id="titulo">MOTOS</div>
+
+
+        </div>
+        <ul id="menu">
+            <a href="index.html">
+                <li>INICIO</li>
+            </a>
+            <a href="contenido.html">
+                <li>CONTENIDO </li>
+            </a>
+            <a href="contacto.html">
+                <li>CONTACTO</li>
+            </a>
+
+
+
+
+
+
+        </ul>
+        <section>
+            <article>
+                <img src="naked.jpg">
+                <div>
+                    <p>NAKED</p>
+                </div>
+            </article>
+            <article>
+                <img src="r.jpg">
+                <div>
+                    <p>"R"</p>
+                </div>
+            </article>
+            <article>
+                <img src="trail.jpg">
+                <div>
+                    <p>TRAIL</p>
+                </div>
+            </article>
+            <article>
+                <img src="scooter.jpg">
+                <div>
+                    <p>SCOOTER</p>
+                </div>
+            </article>
+        </section>
+
+        <div id="destacados">
+            <H2>MARCAS</H2>
+
+
+        </div>
+        <div id="contenedor2">
+            <div class="elemento2">
+                <div class="texto">
+                    <h3>YAMAHA</h3>
+                    <p>Marca japonesa líder en motos, reconocida por su innovación, calidad y versatilidad
+                        en modelos deportivos, urbanos y todoterreno.</p>
+                </div>
+                <img src="YAMAHA.png">
+
+            </div>
+            <div class="elemento2">
+                <img src="DUCATI.png">
+                <div class="texto">
+                    <h3>DUCATI</h3>
+                    <p>Marca italiana icónica por sus motos deportivas de alto rendimiento, diseño elegante y espíritu
+                        competitivo.</p>
+                </div>
+            </div>
+            <div class="elemento2">
+                <img src="HONDA.png">
+                <div class="texto">
+                    <h3>HONDA</h3>
+                    <p>Referente japonés en el mundo de las motos, destacada por su fiabilidad, tecnología avanzada y
+                        amplia variedad de modelos.</p>
+                </div>
+            </div>
+            <div class="elemento2">
+                <div class="texto">
+                    <h3>TRIUMPH</h3>
+                    <p>Legendaria marca británica que combina estilo clásico y tecnología moderna en motos de carácter
+                        distintivo.</p>
+                </div>
+                <img src="triump2.png">
+
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

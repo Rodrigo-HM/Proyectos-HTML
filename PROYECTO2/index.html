@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marvel</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> 
+        <style>
+            img {
+                width: 100%;
+                height: 250px;
+                border-radius: 5px;
+            }
+            #tarjetas {
+                padding: 5px;
+                border-radius: 5px;
+            }
+            .link-div {
+                text-decoration: none;
+                color: inherit;
+            }
+            body{
+                background-image: url(https://static.vecteezy.com/system/resources/previews/002/623/583/non_2x/abstract-black-geometric-shape-background-with-diagonal-line-texture-design-for-presentation-banner-cover-web-flyer-card-poster-game-texture-slide-and-powerpoint-illustration-vector.jpg);
+            }
+            h1{
+                color: aliceblue;
+            }
+            hr{
+                color: aliceblue;
+            }
+        </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col" style="margin-top: 20px; background-image: url('https://wallpapers.com/images/hd/marvel-d-c-superheroes-banner-arfzdz9thvvzrhe6.jpg'); background-repeat: no-repeat; background-size: cover; font-weight: bold; color: rgb(255, 255, 255); height: 200px; display: flex; align-items: center; justify-content: center; font-size: 50px;">
+                MARVEL - DC
+            </div>
+        </div>
+        <div class="row">
+            <a href="starwars.html" class="col alert alert-primary text-center fs-2 link-div" style="margin-top: 20px; background-image: url('https://cdn.pixabay.com/photo/2016/02/03/08/32/banner-1176677_960_720.jpg'); background-repeat: no-repeat; background-size: cover; font-weight: bold; color: rgb(255, 255, 255);">
+                STAR WARS
+            </a>
+        </div>
+        <div class="row" id="contenidos" style="display: flex; align-items: center; justify-content: center;">
+            <H1>MARVEL</H1>
+            <hr>
+            <!-- TARJETAS JUEGOS -->
+        </div>
+        <div class="row" id="contenidos2" style="display: flex; align-items: center; justify-content: center;">
+            <H1>DC</H1>
+            <hr>
+            <!-- TARJETAS JUEGOS -->
+        </div>
+    </div>
+
+    <script>
+
+        function guardarId(id) {
+            sessionStorage.setItem('id', id); // Guardar el id en sessionStorage
+        }
+
+        async function lecturaJSON() {  //se pone async para poder usar await dentro 
+            const respuesta = await fetch('superhero.json');
+            const datos = await respuesta.json();
+            datos.forEach(dato => {  // recorre el array de datos de arriva(en formato javascript) y lo almacena temporalemnte en dato
+                const tarjeta = `
+                    <div class="col-md-6 col-lg-4" id="tarjetas" style="margin-bottom: 5px;">
+                        <a href="tarjetasuper.html" onclick="guardarId('${dato.id}')">  
+                        <img src="${dato.imagen1}">
+                        </a>
+                    </div>
+                `;
+                if (dato.grupo === 'marvel') {
+                    document.getElementById("contenidos").innerHTML += tarjeta;
+                    
+                } else if (dato.grupo === 'dc') {
+                    document.getElementById("contenidos2").innerHTML += tarjeta;
+                    
+                }
+            });
+            
+            
+        }
+        
+        
+        
+        lecturaJSON();
+    </script>
+</body>
+</html>

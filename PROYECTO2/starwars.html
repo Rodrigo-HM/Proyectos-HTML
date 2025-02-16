@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Star Wars</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body{
+            background-image: url(https://lumiere-a.akamaihd.net/v1/images/star-wars-backgrounds-14_856985d9.jpeg?download=true);
+            
+        }
+
+        .card {
+            margin-bottom: 20px;
+            background-color: rgb(83, 102, 102);
+            transition: background-color 1.2s;
+        }
+        .card:hover {
+            background-color: rgb(100, 150, 150); 
+        }
+        .card p{
+            font-size: 25px;
+        }
+        h1{
+            text-decoration: underline;
+        }
+        @keyframes glow {  /*todas las fases con distitnos colores para que parezca que se enciende y se apaga */
+            0% { text-shadow: 0 0 5px #fff, 0 0 10px #efb810, 0 0 15px #efb810; }
+            50% { text-shadow: 0 0 10px #fff, 0 0 20px #000000, 0 0 30px #3b383b; }
+            100% { text-shadow: 0 0 5px #fff, 0 0 10px #efb810, 0 0 15px #efb810; }
+        }
+        #cabecera{
+            background-size: cover; 
+            font-weight: bold; 
+            height: 150px; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            font-size: 50px; 
+            border-radius: 15px;
+            animation: glow 1.9s infinite alternate;  /*aplica glow a la cabecera y define el tiempo*/
+        }
+        #opciones {
+        display: flex;
+        justify-content: space-between; 
+        text-align: center; 
+        margin-top: 30px;
+        
+        }
+
+        .boton {
+            background-color: #808080; 
+            color: white;
+            border-radius: 10px;
+            padding: 15px 30px; 
+            font-size: 18px;
+            font-weight: bold;    
+        }
+        .boton:hover {
+            background-color: #606060;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="cabecera" class="col text-center text-white mt-4 mb-5" style="background-image: url('https://static.vecteezy.com/system/resources/previews/016/265/607/non_2x/abstract-space-galaxy-view-with-blue-pink-cloud-free-vector.jpg');">
+            STAR WARS
+        </div>
+
+        <div id="opciones" class="col">
+            <button class="boton" id="people">PEOPLE</button>
+            <button class="boton" id="planets">PLANETS</button>
+            <button class="boton" id="vehicles">VEHICLES</button>
+        </div>
+
+        <div class="row" id="tarjetas" style="margin-top: 50px;">
+            <!-- Aquí se insertarán las tarjetas -->
+        </div>
+    </div>
+
+    <script>
+        
+            async function cargarDatos(categoria) {
+                const url = `https://swapi.dev/api/${categoria}/`;
+                const tarjetas = document.getElementById('tarjetas');
+                tarjetas.innerHTML = ""; // Limpiar tarjetas
+                let arreglo=11;
+                for (let n = 1; n < arreglo; n++) {  //cambio el valor por arreglo, asi cuando la id no existe  pasa al siguiente 
+                    
+                        const respuesta = await fetch(`${url}${n}`);
+                        if (!respuesta.ok){ //si no hay respuesta, suma a arreglo y sigue para llegar a 10
+                            arreglo++;
+                            continue;
+                        }
+                        const datos = await respuesta.json();
+    
+                        let contenido = "";
+                        let contador = 0;
+                        for (const clave in datos) {
+                            if (clave !== "name" && typeof datos[clave] === "string") {  //para que no coja ni nombre ni datos numericos
+                                const claveFormateada = clave.replace(/_/g, ' ').charAt(0).toUpperCase() + clave.replace(/_/g, ' ').slice(1); //cambia la primera letra a mayuscula y _ por espacio y quita el primer caracater con slice
+                                contenido += `<p><strong>${claveFormateada}:</strong> ${datos[clave]}</p>`;
+                                contador++;
+    
+                                // Límites por categoría
+                                if ((categoria === "people" && contador > 6) || 
+                                    (categoria === "planets" && contador > 7) || 
+                                    (categoria === "vehicles" && contador > 9)) {
+                                    break;
+                                }
+                            }
+                        }
+    
+                        const tarjeta = `
+                            <div class="col-md-12 col-lg-6">
+                                <div class="card">
+                                    <div class="card-body"> 
+                                        <h1 class="card-title">${datos.name}</h1>
+                                        ${contenido}
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                        tarjetas.innerHTML += tarjeta;
+                    
+                }
+            }
+    
+            // Haciendo click cambia la categoria de la funcion
+            document.getElementById("people").addEventListener("click", () => cargarDatos("people"));
+            document.getElementById("planets").addEventListener("click", () => cargarDatos("planets"));
+            document.getElementById("vehicles").addEventListener("click", () => cargarDatos("vehicles"));
+    
+            // Cargar inicialmente people para que no se vea en blanco 
+            cargarDatos("people");
+        
+    </script>
+    
+
+</body>
+</html>
